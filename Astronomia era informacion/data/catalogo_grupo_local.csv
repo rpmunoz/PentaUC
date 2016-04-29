@@ -1,10 +1,10 @@
 nombre,l,b,distancia,diametro,tipo
-Milky Way             ,0,0,0,27.59,SBbc     
+Vía Lactea,0,0,0,27.59,SBbc     
 Sagittarius Dwarf     ,5.6,-14.1,23.91,6.13,dSph     
 Ursa Major II         ,152.5,37.4,30.66,0.31,dSph     
 Coma Berenices Dwarf  ,241.9,83.6,44.15,0.31,dSph     
-Large Magellanic Cloud,280.5,-32.9,50.59,7.67,SBm      
-Small Magellanic Cloud,302.8,-44.3,59.79,4.6,SBm      
+Gran nube de Magallanes,280.5,-32.9,50.59,7.67,SBm      
+Pequeña nube de Magallanes,302.8,-44.3,59.79,4.6,SBm      
 Bo_tes Dwarf          ,358,69.6,60.4,0.61,dSph     
 Ursa Minor Dwarf      ,105,44.8,65.92,0.61,dSph     
 Sculptor Dwarf        ,287.5,-83.2,79.1,0.92,dSph     
@@ -35,7 +35,7 @@ Andromeda IX          ,123.2,-19.7,768.04,1.23,dSph
 Andromeda I           ,121.7,-24.9,772.64,0.61,dSph     
 LGS 3                 ,126.8,-40.9,772.64,0.61,dIrr/dSph
 Andromeda V           ,126.2,-15.1,784.9,0.61,dSph     
-"Andromeda Galaxy, M31 ",121.2,-21.6,784.9,42.92,Sb       
+Andromeda             ,121.2,-21.6,784.9,42.92,Sb       
 Andromeda XI          ,121.7,-29.1,784.9,0.61,dSph     
 Andromeda XII         ,122,-28.5,784.9,0.61,dSph     
 Andromeda XIII        ,123,-29.9,784.9,0.61,dSph     
@@ -43,7 +43,7 @@ Andromeda VI          ,106.1,-36.3,795.63,0.92,dSph
 M32                   ,121.2,-22,804.83,2.45,dE2      
 M110                  ,120.7,-21.7,824.76,4.6,dSph/dE5 
 IC 10                 ,119,-3.3,824.76,2.45,dIrr     
-"Triangulum Galaxy, M33",133.6,-31.3,838.56,16.86,Sc       
+Galaxia del Triangulo ,133.6,-31.3,838.56,16.86,Sc       
 Tucana Dwarf          ,322.9,-47.4,879.95,0.61,dSph     
 Pegasus Dwarf         ,94.8,-43.5,919.81,1.84,dIrr/dSph
 WLM                   ,75.9,-73.6,925.94,3.07,Irr      
