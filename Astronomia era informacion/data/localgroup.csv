@@ -1,0 +1,55 @@
+nombre,l,b,dist,derr,diam,tipo,desc
+Milky Way,0,0,0,0,90,Gig,0
+Sagittarius Dwarf,5.6,-14.1,78,7,20,Sat,1994
+Ursa Major II,152.5,37.4,100,15,1,Sat,2006
+Coma Berenices Dwarf,241.9,83.6,144,13,1,Sat,2006
+Large Magellanic Cloud,280.5,-32.9,165,5,25,Sat,0
+Small Magellanic Cloud,302.8,-44.3,195,15,15,Sat,0
+Bootes Dwarf,358,69.6,197,9,2,Sat,2006
+Ursa Minor Dwarf,105,44.8,215,10,2,Sat,1954
+Sculptor Dwarf,287.5,-83.2,258,13,3,Sat,1937
+Draco Dwarf,86.4,34.7,267,20,2,Sat,1954
+Sextans Dwarf,243.4,42.2,280,13,3,Sat,1990
+Ursa Major I,159.4,54.4,325,0,3,Sat,2005
+Carina Dwarf,260.1,-22.2,329,16,2,Sat,1977
+Fornax Dwarf,237.1,-65.7,450,26,5,Sat,1938
+Hercules Dwarf,28.7,36.9,457,41,4,Sat,2006
+Canes Venatici II,113.6,82.7,489,46,2,Sat,2006
+Leo IV,265.4,56.5,522,47,2,Sat,2006
+Leo II,220.2,67.2,669,39,3,Sat,1950
+Canes Venatici I,74.3,79.8,718,82,6,Sat,2006
+Leo I,226,49.1,815,100,3,Sat,1950
+Leo T,214.9,43.7,1360,65,2,Sat,2007
+Phoenix Dwarf,272.2,-68.9,1450,100,2,Sat,1976
+NGC 6822,25.3,-18.4,1520,85,8,Sat,1884
+NGC 185,120.8,-14.5,2010,60,8,Sat,1787
+Andromeda II,128.9,-29.2,2165,40,3,Sat,1970
+Leo A,196.9,52.4,2250,325,4,Sat,1940
+IC 1613,129.8,-60.6,2365,50,10,Sat,1890
+Andromeda X,125.8,-18,2290,120,5,Sat,2006
+NGC 147,119.8,-14.3,2370,50,10,Sat,1830
+Andromeda III,119.3,-26.2,2450,50,3,Sat,1970
+Andromeda VII,109.5,-10,2465,95,2,Sat,1999
+Cetus Dwarf,101.4,-72.8,2485,65,3,Sat,1999
+Andromeda IX,123.2,-19.7,2505,75,4,Sat,2004
+Andromeda I,121.7,-24.9,2520,60,2,Sat,1970
+LGS 3,126.8,-40.9,2520,70,2,Sat,1978
+Andromeda V,126.2,-15.1,2560,80,2,Sat,1998
+"Andromeda Galaxy, M31",121.2,-21.6,2560,50,140,Gig,964
+Andromeda XI,121.7,-29.1,2560,325,2,Sat,2006
+Andromeda XII,122,-28.5,2560,325,2,Sat,2006
+Andromeda XIII,123,-29.9,2560,325,2,Sat,2006
+Andromeda VI,106.1,-36.3,2595,50,3,Sat,1998
+M32,121.2,-22,2625,115,8,Sat,1749
+M110,120.7,-21.7,2690,80,15,Sat,1773
+IC 10,119,-3.3,2690,165,8,Sat,1890
+"Triangulum Galaxy, M33",133.6,-31.3,2735,55,55,Gig,1654
+Tucana Dwarf,322.9,-47.4,2870,130,2,Sat,1990
+Pegasus Dwarf,94.8,-43.5,3000,80,6,Sat,0
+WLM,75.9,-73.6,3020,80,10,Sat,1909
+Aquarius Dwarf,34,-31.3,3345,100,3,Sat,1959
+SagDIG,21.1,-16.3,3460,520,3,Sat,1977
+Antlia Dwarf,263.1,22.3,4030,210,3,Sat,1997
+NGC 3109,262.1,23.1,4075,540,25,Sat,1836
+Sextans A,246.2,39.9,4350,120,10,Sat,0
+Sextans B,233.2,43.8,4385,325,8,Sat,0
