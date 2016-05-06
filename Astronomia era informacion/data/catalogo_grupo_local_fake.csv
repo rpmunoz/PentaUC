@@ -1,0 +1,62 @@
+nombre,l,b,distancia,diametro,tipo,desc
+Via Lactea,0,0,0,27.59,SBbc     ,0
+Sagittarius Dwarf     ,5.6,-14.1,23.91,6.13,dSph,1994
+Ursa Major II  ,152.5,37.4,30.66,0.31,dSph,2006
+Coma Berenices Dwarf  ,241.9,83.6,44.15,0.31,dSph,2006
+Gran nube de Magallanes,280.5,-32.9,50.59,7.67,SBm,0
+Mediana nube de Magallanes,291.65,-37.1,-20,6,SBm,0
+Pequena nube de Magallanes,302.8,-44.3,59.79,4.6,SBm,0
+Bo_tes Dwarf   ,358,69.6,60.4,0.61,dSph,2006
+Ursa Minor Dwarf,105,44.8,65.92,0.61,dSph,1954
+Sculptor Dwarf ,287.5,-83.2,79.1,0.92,dSph,1937
+Draco Dwarf    ,86.4,34.7,81.86,0.61,dSph,1954
+Sextans Dwarf  ,243.4,42.2,85.85,0.92,dSph,1990
+Ursa Major I   ,159.4,54.4,99.65,0.92,dSph,2005
+Carina Dwarf   ,260.1,-22.2,100.87,0.61,dSph,1977
+Fornax Dwarf   ,237.1,-65.7,137.97,1.53,dSph,1938
+Hercules Dwarf ,28.7,36.9,140.12,1.23,dSph,2006
+New Via Lactea,272.2,54.4,5000,27.59,dSph,0
+Canes Venatici II     ,113.6,82.7,149.93,0.61,dSph,2006
+Leo IV  ,265.4,56.5,160.05,0.61,dSph,2006
+Leo II  ,220.2,67.2,205.12,0.92,dSph,1950
+Canes Venatici I,74.3,79.8,220.14,1.84,dSph,2006
+Leo I   ,226,49.1,249.88,0.92,dSph,1950
+Leo T   ,214.9,43.7,416.98,0.61,dIrr,2007
+Phoenix Dwarf  ,272.2,-68.9,444.57,0.61,dIrr,1976
+NGC 6822,25.3,-18.4,466.03,2.45,Irr,1884
+NGC4221,380,49,501.7,0.89,Irr,1980
+NGC 185,120.8,-14.5,616.27,2.45,dSph,1787
+Andromeda II   ,128.9,-29.2,663.79,0.92,dSph,1970
+Leo A   ,196.9,52.4,689.85,1.23,dIrr     ,1940
+IC 1613,129.8,-60.6,725.11,3.07,Irr,1890
+Andromeda X    ,125.8,-18,702.12,1.53,dSph,2006
+NGC 147,119.8,-14.3,726.65,3.07,dSph,1830
+Andromeda III  ,119.3,-26.2,751.17,0.92,dSph,1970
+Andromeda VII  ,109.5,-10,755.77,0.61,dSph,1999
+Cetus Dwarf    ,101.4,-72.8,761.91,0.92,dSph,1999
+Andromeda IX   ,123.2,-19.7,768.04,1.23,dSph,2004
+Andromeda I    ,121.7,-24.9,772.64,0.61,dSph,1970
+LGS 3,126.8,-40.9,772.64,0.61,dIrr,1978
+Andromeda V    ,126.2,-15.1,784.9,0.61,dSph,1998
+The biggest  Andromeda ever,122,-10,804.83,420,dSph,2016
+Andromeda,121.2,-21.6,784.9,42.92,Sb,964
+Andromeda XI   ,121.7,-29.1,784.9,0.61,dSph,2006
+Andromeda XIV,121.5,-28.5,784.9,0.62,dSph,2100
+Andromeda XII  ,122,-28.5,784.9,0.61,dSph,2006
+Andromeda XIII ,123,-29.9,784.9,0.61,dSph,2006
+Andromeda VI   ,106.1,-36.3,795.63,0.92,dSph,1998
+M32,121.2,-22,804.83,2.45,dE2,1749
+M110,120.7,-21.7,824.76,4.6,dSph,1773
+IC 10,119,-3.3,824.76,2.45,dIrr     ,1890
+Galaxia del Triangulo ,133.6,-31.3,838.56,16.86,Sc,1654
+Tucana Dwarf   ,322.9,-47.4,879.95,0.61,dSph,1990
+Pegasus Dwarf  ,94.8,-43.5,919.81,1.84,dIrr,0
+WLM     ,75.9,-73.6,925.94,3.07,Irr,1909
+Taurus Dwarf,110,-31.3,830.56,-3,dSph,1969
+Aquarius Dwarf ,34,-31.3,1025.58,0.92,dIrr,1959
+SagDIG  ,21.1,-16.3,1060.84,0.92,dIrr     ,1977
+Antlia Dwarf   ,263.1,22.3,1235.61,0.92,dIrr,1997
+NGC 3109,262.1,23.1,1249.4,7.67,Irr,1836
+Sextans A,246.2,39.9,1333.72,3.07,dIrr     ,0
+Andromeda I/II,121.2,-21.6,10,42.92,Sb,964
+Sextans B,233.2,43.8,1344.45,2.45,dIrr     ,0
