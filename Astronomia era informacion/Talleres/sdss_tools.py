@@ -95,6 +95,7 @@ def sdss_fits(coo, filtro='r'):
         ax.imshow(imtoasinh(im_data.T), vmin=0.1, vmax=0.8, cmap=plt.get_cmap('gray'), interpolation='nearest', origin='lower')
         ax.axis('off')
         ax.text(0.05,0.05, str(i+1), transform=ax.transAxes, color='white', fontsize=16)
+        ax.text(0.95,0.05, 'Filtro '+filtro, transform=ax.transAxes, color='white', fontsize=16, horizontalalignment='right')
         ax.invert_xaxis()
         
     fig.subplots_adjust(hspace=0.1, wspace=0.1)
