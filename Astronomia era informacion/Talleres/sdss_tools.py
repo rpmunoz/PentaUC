@@ -11,8 +11,8 @@ from astroquery.sdss import SDSS
 import requests, StringIO, urllib
 from PIL import Image
 
-from astroML.plotting import setup_text_plots
-setup_text_plots(usetex=True,fontsize=18)
+#from astroML.plotting import setup_text_plots
+#setup_text_plots(usetex=True,fontsize=18)
 
 absorption_lines={'name':['CaII K','CaII H','Mgb'], 'lambda':[3933.,3968,5183.], 'align':['right','left','left'], 'offset':[-50,50,50]}
 
