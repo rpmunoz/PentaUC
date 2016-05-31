@@ -11,9 +11,6 @@ from astroquery.sdss import SDSS
 import requests, StringIO, urllib
 from PIL import Image
 
-from astroML.plotting import setup_text_plots
-setup_text_plots(usetex=True,fontsize=18)
-
 absorption_lines={'name':['CaII K','CaII H','Mgb'], 'lambda':[3933.,3968.,5183.], 'align':['right','left','left'], 'offset':[-50,50,50], 'position':[0.05,0.05,0.05], 'color':'r'}
 emission_lines={'name':['[O II]',r'H$\beta$',r'H$\alpha$'], 'lambda':[3727.,4861.,6563.], 'align':['left','left','left'], 'offset':[50,50,50], 'position':[0.9,0.9,0.9], 'color':'b'}
 
