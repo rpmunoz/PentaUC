@@ -2,6 +2,7 @@ Acá links de interés para los alumnos, tanto hayan sido revisados en clases, c
 
 * Descarga de Anaconda, que contiene, entre otros, jupyter notebook. Recomendamos descargar la versión "Python 2.7" : https://www.continuum.io/downloads#_windows
 * Guía ligeramente desactualizada de instalación (fíjense que usa "ipython notebook" en vez de "jupyter notebook"): http://www.tutorialpython.com/instalar-python/
+* Medición de la distancia al Sol utilizando el tránsito de Venus (en inglés) http://www.exploratorium.edu/venus/question4.html
 * Galcrash: http://burro.cwru.edu/JavaLab/GalCrashWeb/GCSolo.html
 * Charting the Heavens: https://www.youtube.com/watch?v=n7vzVcKEqIU
 * Laniakea, our home supercluster: https://www.youtube.com/watch?v=rENyyRwxpHo
