@@ -138,8 +138,8 @@ def sdss_spectra(coo, redshift=0.):
           ax.plot(emission_lines['lambda'][j]*np.ones(2)*(1.+redshift[i]), [0., 1e5], emission_lines['color']+'--') 
           ax.text(emission_lines['lambda'][j]*(1.+redshift[i])+emission_lines['offset'][j], emission_lines['position'][j]*100., emission_lines['name'][j], color='black', fontsize=18, horizontalalignment=emission_lines['align'][j])
 
-        ax.set_ylabel('Flujo [10$^{-17}$ ergs/cm$^2$/s/\AA]')
-        ax.set_xlabel('Longitud de onda [\AA]')
+        ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/\AA]')
+        ax.set_xlabel(r'Longitud de onda [\AA]')
         ax.set_title('Galaxia '+str(i+1))
         ax.set_xlim(3500,9000)
         ax.set_ylim(0.,100.)
@@ -172,8 +172,8 @@ def sdss_template(tipo='eliptica'):
 		ax.plot(lines['lambda'][j]*np.ones(2), [0., 1e5], lines['color']+'--')
 		ax.text(lines['lambda'][j]+lines['offset'][j], lines['position'][j]*100., lines['name'][j], color='black', fontsize=18, horizontalalignment=lines['align'][j])
   
-		ax.set_ylabel('Flujo [10$^{-17}$ ergs/cm$^2$/s/\AA]')
-		ax.set_xlabel('Longitud de onda [\AA]')
+		ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/\AA]')
+		ax.set_xlabel(r'Longitud de onda [\AA]')
  		ax.set_title(title)
 		ax.set_xlim(3500,9000)
  		ax.set_ylim(0.,100.)
