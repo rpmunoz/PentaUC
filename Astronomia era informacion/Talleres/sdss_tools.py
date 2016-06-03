@@ -128,7 +128,7 @@ def sdss_spectra(coo, redshift=0.):
         loglam=spec_data['loglam']
         flux=np.convolve(spec_data['flux'],np.ones((10,))/10, mode='same')
 
-        ax.plot(10.**loglam, flux, label=xid['instrument'][0], linewidth=2)
+        ax.plot(10.**loglam, flux, label=xid['instrument'][0], color='black', linewidth=2)
 
         for j in range(len(absorption_lines['name'])):
           ax.plot(absorption_lines['lambda'][j]*np.ones(2)*(1.+redshift[i]), [0., 1e5], absorption_lines['color']+'--') 
