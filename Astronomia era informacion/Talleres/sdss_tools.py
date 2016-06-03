@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 from astropy import units as u
 from astropy.io import fits
-from astropy.coordinates import SkyCoord, Angle
+from astropy.coorAdinates import SkyCoord, Angle
 from astropy.nddata import Cutout2D
 from astropy.wcs import WCS
 from astroquery.sdss import SDSS
