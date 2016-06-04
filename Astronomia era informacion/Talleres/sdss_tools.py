@@ -50,7 +50,7 @@ def sdss_jpg(coo):
     fig, ax = plt.subplots(figsize=(5*n_col,5*n_row), sharex=True, sharey=True)
     for i in range(len(coo)):
         ax = plt.subplot(n_row, n_col, i+1)
-        print 'Procesando galaxia '+str(i+1)
+        print 'Procesando galaxia '+str(i)
         query_string = urllib.urlencode(dict(ra=coo[i].ra.deg, 
                                          dec=coo[i].dec.deg, 
                                          width=impix, height=impix, 
@@ -62,7 +62,7 @@ def sdss_jpg(coo):
         
         ax.imshow(im_data)
         ax.axis('off')
-        ax.text(0.05,0.05, str(i+1), transform=ax.transAxes, color='white', fontsize=16)
+        ax.text(0.05,0.05, str(i), transform=ax.transAxes, color='white', fontsize=16)
         
     fig.subplots_adjust(hspace=0.1, wspace=0.1)
 
@@ -79,7 +79,7 @@ def sdss_fits(coo, filtro='r'):
     fig, ax = plt.subplots(figsize=(5*n_col,5*n_row), sharex=True, sharey=True)
     for i in range(len(coo)):
         ax = plt.subplot(n_row, n_col, i+1)
-        print 'Procesando galaxia '+str(i+1)
+        print 'Procesando galaxia '+str(i)
         xid = SDSS.query_region(coo[i], spectro=True)
         image=SDSS.get_images(matches=xid, band=filtro)[0][0]
 
@@ -95,7 +95,7 @@ def sdss_fits(coo, filtro='r'):
 #        ax.imshow(im_data,vmin=im_median-1*im_std, vmax=im_median+5*im_std, cmap=plt.get_cmap('gray'), interpolation='nearest')
         ax.imshow(imtoasinh(im_data.T), vmin=0.1, vmax=0.8, cmap=plt.get_cmap('gray'), interpolation='nearest', origin='lower')
         ax.axis('off')
-        ax.text(0.05,0.05, str(i+1), transform=ax.transAxes, color='white', fontsize=16)
+        ax.text(0.05,0.05, str(i), transform=ax.transAxes, color='white', fontsize=16)
         ax.text(0.95,0.05, 'Filtro '+filtro, transform=ax.transAxes, color='white', fontsize=16, horizontalalignment='right')
         ax.invert_xaxis()
         
@@ -122,7 +122,7 @@ def sdss_spectra(coo, redshift=0.):
     fig, ax = plt.subplots(figsize=(20,8*n_coo), sharex=True, sharey=True)
     for i in range(len(coo)):
         ax = plt.subplot(n_coo, 1,i+1)
-        print 'Procesando galaxia '+str(i+1)
+        print 'Procesando galaxia '+str(i)
         xid = SDSS.query_region(coo[i], spectro=True)
         spec=SDSS.get_spectra(matches=xid)[0][1]
 
@@ -154,7 +154,7 @@ def sdss_spectra(coo, redshift=0.):
 
         ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/$\AA$]')
         ax.set_xlabel(r'Longitud de onda [$\AA$]')
-        ax.set_title('Galaxia '+str(i+1))
+        ax.set_title('Galaxia '+str(i))
         ax.set_xlim(3500,8000)
         ax.set_ylim(0.,100.)
         
