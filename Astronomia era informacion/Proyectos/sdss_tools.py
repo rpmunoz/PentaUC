@@ -45,11 +45,9 @@ def sdss_jpg(coo):
     imsize = 1*u.arcmin
     cutoutbaseurl = 'http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx'
 
-    n_col=np.min([n_coo,4])
-    n_row=np.ceil(n_coo*1./n_col)
-    fig, ax = plt.subplots(figsize=(5*n_col,5*n_row), sharex=True, sharey=True)
+    fig, ax = plt.subplots(figsize=(20,20), sharex=True, sharey=True)
     for i in range(len(coo)):
-        ax = plt.subplot(n_row, n_col, i+1)
+        ax = plt.subplot(np.floor(np.sqrt(n_coo)),np.ceil(np.sqrt(n_coo)),i+1)
         print 'Procesando galaxia '+str(i+1)
         query_string = urllib.urlencode(dict(ra=coo[i].ra.deg, 
                                          dec=coo[i].dec.deg, 
@@ -74,11 +72,9 @@ def sdss_fits(coo, filtro='r'):
         n_coo=1
         coo=[coo]
 
-    n_col=np.min([n_coo,4])
-    n_row=np.ceil(n_coo*1./n_col)
-    fig, ax = plt.subplots(figsize=(5*n_col,5*n_row), sharex=True, sharey=True)
+    fig, ax = plt.subplots(figsize=(20,20), sharex=True, sharey=True)
     for i in range(len(coo)):
-        ax = plt.subplot(n_row, n_col, i+1)
+        ax = plt.subplot(np.floor(np.sqrt(n_coo)), np.ceil(np.sqrt(n_coo)),i+1)
         print 'Procesando galaxia '+str(i+1)
         xid = SDSS.query_region(coo[i], spectro=True)
         image=SDSS.get_images(matches=xid, band=filtro)[0][0]
@@ -129,33 +125,23 @@ def sdss_spectra(coo, redshift=0.):
         spec_h=spec.header
         spec_data=spec.data
 
-        loglam=spec_data['loglam']  # Logaritmo de la longitud de onda
-        flux=spec_data['flux'] # Flujo medido en unidades de Ergs/cm^2/s/AA
+        loglam=spec_data['loglam']
+        flux=np.convolve(spec_data['flux'],np.ones((10,))/10, mode='same')
 
-        window_len=9
-        s=np.r_[flux[window_len-1:0:-1],flux,flux[-1:-window_len:-1]]
-        w=np.ones(window_len,'d')
-        w=eval('np.bartlett(window_len)')
-        flux_smooth=np.convolve(w/w.sum(),s,mode='valid')[(window_len-1)/2:-(window_len-1)/2]
-
-        gv=(loglam>np.log10(4000.)) & (loglam<np.log10(8000.))
-        flux_scale=80./np.percentile(flux_smooth[gv],98)
-
-        #ax.plot(10.**loglam, flux*flux_scale, label=xid['instrument'][0], color='black', linewidth=1)
-        ax.plot(10.**loglam, flux_smooth*flux_scale, label=xid['instrument'][0], color='black', linewidth=1)
+        ax.plot(10.**loglam, flux, label=xid['instrument'][0], color='black', linewidth=2)
 
         for j in range(len(absorption_lines['name'])):
           ax.plot(absorption_lines['lambda'][j]*np.ones(2)*(1.+redshift[i]), [0., 1e5], absorption_lines['color']+'--') 
-          ax.text(absorption_lines['lambda'][j]*(1.+redshift[i])+absorption_lines['offset'][j], absorption_lines['position'][j]*100., absorption_lines['name'][j], color=absorption_lines['color'], alpha=0.7, fontsize=16, horizontalalignment=absorption_lines['align'][j])
+          ax.text(absorption_lines['lambda'][j]*(1.+redshift[i])+absorption_lines['offset'][j], absorption_lines['position'][j]*100., absorption_lines['name'][j], color='black', fontsize=18, horizontalalignment=absorption_lines['align'][j])
 
         for j in range(len(emission_lines['name'])):
           ax.plot(emission_lines['lambda'][j]*np.ones(2)*(1.+redshift[i]), [0., 1e5], emission_lines['color']+'--') 
-          ax.text(emission_lines['lambda'][j]*(1.+redshift[i])+emission_lines['offset'][j], emission_lines['position'][j]*100., emission_lines['name'][j], color=emission_lines['color'], alpha=0.7, fontsize=16, horizontalalignment=emission_lines['align'][j])
+          ax.text(emission_lines['lambda'][j]*(1.+redshift[i])+emission_lines['offset'][j], emission_lines['position'][j]*100., emission_lines['name'][j], color='black', fontsize=18, horizontalalignment=emission_lines['align'][j])
 
-        ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/$\AA$]')
-        ax.set_xlabel(r'Longitud de onda [$\AA$]')
+        ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/\AA]')
+        ax.set_xlabel(r'Longitud de onda [\AA]')
         ax.set_title('Galaxia '+str(i+1))
-        ax.set_xlim(3500,8000)
+        ax.set_xlim(3500,9000)
         ax.set_ylim(0.,100.)
         
     fig.subplots_adjust(hspace=0.2, wspace=0.1)
@@ -163,36 +149,32 @@ def sdss_spectra(coo, redshift=0.):
 
 def sdss_template(tipo='eliptica'):
 
-    if tipo=='eliptica':
-        template = SDSS.get_spectral_template('galaxy_early')
-        title='Espectro de galaxia eliptica'
-        lines=absorption_lines
-    elif tipo=='espiral': 
-        template = SDSS.get_spectral_template('galaxy_late')
-        title='Espectro de galaxia espiral'
-        lines=emission_lines
+	if tipo=='eliptica':
+		template = SDSS.get_spectral_template('galaxy_early')
+		title='Espectro de galaxia eliptica'
+		lines=absorption_lines
+	elif tipo=='espiral': 
+		template = SDSS.get_spectral_template('galaxy_late')
+		title='Espectro de galaxia espiral'
+		lines=emission_lines
 
-    spec_h=template[0][0].header
-    spec_data=template[0][0].data
-    wcs=WCS(spec_h)  
+	spec_h=template[0][0].header
+	spec_data=template[0][0].data
+	wcs=WCS(spec_h)  
 
-    index = np.arange(spec_h['NAXIS1'])
-    loglam=wcs.wcs_pix2world(index, np.zeros(len(index)), 0)[0]
-    flux=spec_data[0]
-
-    gv=(loglam>np.log10(4000.)) & (loglam<np.log10(8000.))
-    flux_scale=80./np.max(flux[gv])
+	index = np.arange(spec_h['NAXIS1'])
+	loglam=wcs.wcs_pix2world(index, np.zeros(len(index)), 0)[0]
+	flux=spec_data[0]/np.max(spec_data[0])*80.
   
-    fig, ax = plt.subplots(figsize=(20,8), sharex=True, sharey=True)
-    plt.plot(10**loglam, flux*flux_scale, '-', color='black', linewidth=1)
-
-    for j in range(len(lines['name'])):
-        ax.plot(lines['lambda'][j]*np.ones(2), [0., 1e5], lines['color']+'--')
-        ax.text(lines['lambda'][j]+lines['offset'][j], lines['position'][j]*100., lines['name'][j], color='black', fontsize=18, horizontalalignment=lines['align'][j])
+	fig, ax = plt.subplots(figsize=(20,8), sharex=True, sharey=True)
+	plt.plot(10**loglam, flux, '-', color='black', linewidth=2)
+	for j in range(len(lines['name'])):
+		ax.plot(lines['lambda'][j]*np.ones(2), [0., 1e5], lines['color']+'--')
+		ax.text(lines['lambda'][j]+lines['offset'][j], lines['position'][j]*100., lines['name'][j], color='black', fontsize=18, horizontalalignment=lines['align'][j])
   
-        ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/\AA]')
-        ax.set_xlabel(r'Longitud de onda [\AA]')
-        ax.set_title(title)
-        ax.set_xlim(3500,8000)
-        ax.set_ylim(0.,100.)
+		ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/\AA]')
+		ax.set_xlabel(r'Longitud de onda [\AA]')
+ 		ax.set_title(title)
+		ax.set_xlim(3500,9000)
+ 		ax.set_ylim(0.,100.)
 
