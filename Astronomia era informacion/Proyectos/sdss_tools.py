@@ -33,7 +33,7 @@ def imtoasinh(im_data):
     
     return im_gray
 
-def sdss_jpg(coo):
+def sdss_jpg(coo, fov=1):
     
     try:
         n_coo=len(coo)
@@ -42,7 +42,7 @@ def sdss_jpg(coo):
         coo=[coo]
         
     impix = 320
-    imsize = 1*u.arcmin
+    imsize = fov*u.arcmin
     cutoutbaseurl = 'http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx'
 
     n_col=np.min([n_coo,4])
