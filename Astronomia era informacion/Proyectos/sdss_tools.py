@@ -101,7 +101,7 @@ def sdss_fits(coo, filtro='r'):
         
     fig.subplots_adjust(hspace=0.1, wspace=0.1)
     
-def sdss_spectra(coo, redshift=0.):
+def sdss_spectra(coo, redshift=0., columns=1):
     
     try:
         n_coo=len(coo)
@@ -119,9 +119,13 @@ def sdss_spectra(coo, redshift=0.):
     if n_coo>1 & n_redshift==1:
       redshift=np.ones(n_coo)*redshift[0]
 
-    fig, ax = plt.subplots(figsize=(20,8*n_coo), sharex=True, sharey=True)
+    n_col=np.min([n_coo,columns])
+    n_row=np.ceil(n_coo*1./n_col)
+    fig, ax = plt.subplots(figsize=(16,6*n_row/(n_col*1.)), sharex=True, sharey=True)
+#    fig, ax = plt.subplots(figsize=(20,8*n_coo), sharex=True, sharey=True)
     for i in range(len(coo)):
-        ax = plt.subplot(n_coo, 1,i+1)
+        ax = plt.subplot(n_row, n_col, i+1)
+        #ax = plt.subplot(n_coo, 1,i+1)
         print 'Procesando galaxia '+str(i)
         xid = SDSS.query_region(coo[i], spectro=True)
         spec=SDSS.get_spectra(matches=xid)[0][1]
@@ -146,19 +150,21 @@ def sdss_spectra(coo, redshift=0.):
 
         for j in range(len(absorption_lines['name'])):
           ax.plot(absorption_lines['lambda'][j]*np.ones(2)*(1.+redshift[i]), [0., 1e5], absorption_lines['color']+'--') 
-          ax.text(absorption_lines['lambda'][j]*(1.+redshift[i])+absorption_lines['offset'][j], absorption_lines['position'][j]*100., absorption_lines['name'][j], color=absorption_lines['color'], alpha=0.7, fontsize=16, horizontalalignment=absorption_lines['align'][j])
+          ax.text(absorption_lines['lambda'][j]*(1.+redshift[i])+absorption_lines['offset'][j], absorption_lines['position'][j]*100., absorption_lines['name'][j], color=absorption_lines['color'], alpha=0.7, fontsize=16/(n_col*0.8), horizontalalignment=absorption_lines['align'][j])
 
         for j in range(len(emission_lines['name'])):
           ax.plot(emission_lines['lambda'][j]*np.ones(2)*(1.+redshift[i]), [0., 1e5], emission_lines['color']+'--') 
-          ax.text(emission_lines['lambda'][j]*(1.+redshift[i])+emission_lines['offset'][j], emission_lines['position'][j]*100., emission_lines['name'][j], color=emission_lines['color'], alpha=0.7, fontsize=16, horizontalalignment=emission_lines['align'][j])
+          ax.text(emission_lines['lambda'][j]*(1.+redshift[i])+emission_lines['offset'][j], emission_lines['position'][j]*100., emission_lines['name'][j], color=emission_lines['color'], alpha=0.7, fontsize=16/(n_col*0.8), horizontalalignment=emission_lines['align'][j])
 
-        ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/$\AA$]')
-        ax.set_xlabel(r'Longitud de onda [$\AA$]')
+        if (i % n_col == 0):
+            ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/$\AA$]', fontsize=14/(n_col*0.8))
+        if (i >= (n_col*(n_row-1))):
+            ax.set_xlabel(r'Longitud de onda [$\AA$]', fontsize=14)
         ax.set_title('Galaxia '+str(i))
         ax.set_xlim(3500,8000)
         ax.set_ylim(0.,100.)
         
-    fig.subplots_adjust(hspace=0.2, wspace=0.1)
+    fig.subplots_adjust(hspace=0.3, wspace=0.1)
 
 
 def sdss_template(tipo='eliptica'):
@@ -190,8 +196,8 @@ def sdss_template(tipo='eliptica'):
         ax.plot(lines['lambda'][j]*np.ones(2), [0., 1e5], lines['color']+'--')
         ax.text(lines['lambda'][j]+lines['offset'][j], lines['position'][j]*100., lines['name'][j], color='black', fontsize=18, horizontalalignment=lines['align'][j])
   
-        ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/\AA]')
-        ax.set_xlabel(r'Longitud de onda [\AA]')
+        ax.set_ylabel(r'Flujo [10$^{-17}$ ergs/cm$^2$/s/\AA]', fontsize=14)
+        ax.set_xlabel(r'Longitud de onda [\AA]', fontsize=14)
         ax.set_title(title)
         ax.set_xlim(3500,8000)
         ax.set_ylim(0.,100.)
