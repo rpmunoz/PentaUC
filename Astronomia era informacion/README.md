@@ -7,6 +7,10 @@ Curso de Astronomía dictado el primer semestre del 2016 en el programa PentaUC 
 * Roberto Muñoz <rmunoz@uc.cl>
 * Simón Ángel <saangel@uc.cl>
 
+**Ayudantes**
+* Camilo Fontecilla
+* Felipe Rojas
+
 **Resumen**
 
 Somos habitantes de un pequeño planeta alejado del bullicio y ajetreo del centro Galáctico. Nuestra privilegiada posición nos ha permitido convertirnos en grandes exploradores del Universo y conocedores de sus más profundos secretos. Somos amantes de las estrellas, las galaxias y todo cuanto habita en el Universo.
