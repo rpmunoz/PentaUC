@@ -1,11 +1,11 @@
 # Astronomía en la era de la Información: Un viaje por las galaxias y los bytes
 ======
 
-Curso de Astronomía dictado el primer semestre del 2016 en el programa PentaUC de la Pontificia Universidad Católica de Chile. El material fue diseñado para alumnos de 3º y 4º medio.
+Curso de Astronomía dictado el primer semestre del 2016 en el programa PentaUC de la Pontificia Universidad Católica de Chile. El material fue diseñado para alumnos de 3º y 4º medio. Este material se distribuye bajo una licencia Creative Commons Reconocimiento 3.0 Chile. Usted es libre de copiar, distribuir, comunicar públicamente y hacer obras derivadas bajo la siguiente condición: Reconocer y dar crédito a los autores originales (Roberto Muñoz y Simón Angel)
 
 **Profesores**
-* Roberto Muñoz
-* Simón Ángel
+* Roberto Muñoz <rmunoz@uc.cl>
+* Simón Ángel <saangel@uc.cl>
 
 **Resumen**
 
